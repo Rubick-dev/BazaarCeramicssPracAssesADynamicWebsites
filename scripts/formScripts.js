@@ -1,21 +1,28 @@
+/* obtaining the price from the query string */
+// const bazaarCeramicsString = window.location.search;
+// const urlParams = new URLSearchParams(bazaarCeramicsString);
+// const itemPrice = urlParams.get("price");
+
+
 /* This function stores the values of price and quantity into a variable, then runs
 a check to see if the numbers are valid. Upon valid numbers being identified it 
 then runs a calculations and inserts the result in the total price column */ 
 function sum(){
   // Storing variables
   let val1 = document.getElementById('quantity').value;
-  let val2 = document.getElementById('price').value;
+  let val2 = parseInt(itemPrice);
    
   // Conducting the validity of the quantity value entered by the user and notifying if errors
   if(val1 < 1 || val1===null || isNaN(val1)){
     alert("Please ensure you enter a numeric value greater than zero into the quantity field");
   }
 
-  // Checks the validity of price, if it is invlaid, it resets price back to initial and performs the calculation 
+  // Checks the validity of price, if it is invlaid, it resets price back to initial and performs
+  // the calculation. ### This can no longer fail as the price field has become readonly ###
   else if(val2 < 1 || val2===null || isNaN(val2)){
-    val2 = 135;
+    val2 = parseInt(itemPrice);
     let result = parseFloat(val1)*parseFloat(val2);
-    document.getElementById('price').value=val2;
+    //document.getElementById('price').value=val2;
     document.getElementById('totalPrice').value=result;
     }
 
@@ -31,6 +38,7 @@ function sum(){
 function clearValues(){
   document.getElementById('quantity').value="";
   document.getElementById('totalPrice').value="";
+  result = "";
 return;
 }
 
@@ -39,7 +47,7 @@ function submitForm(){
 
   // Builds the message from the user data for the confirm dialog box message.
   let message = "You are about to order the following items\n\n ";
-  message += "Name: Red Bowl of Doom\n ";
+  message += "Name: " + itemName + "\n ";
   message += "Item Description: ";
   message += document.getElementById("iDesc").value + "\n ";
   message += "Quantity: ";

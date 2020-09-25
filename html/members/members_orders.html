@@ -13,11 +13,11 @@
 	<link rel="stylesheet" type="text/css" href="styles2.css">
 </head>
 
-<body onload="InsertImageSlices()">
+<body onload="InsertImageSlices(); bodyInfoUpdate();">
 
 	<div class="container">
 		<header class="pageHeading">
-			<h1>Red Bowl of Doom</h1>
+			<h1 id="itemsName" >Item Name Placeholder</h1>
 		</header>
 		
 		<div class="imageContent">
@@ -27,14 +27,14 @@
 		
 		<div class="formContent">
 			
-			<h3>Order Item - Red Bowl of Doom</h3>
+			<h3 id="itemsName2">Order Item - ######</h3>
 
 			<div class="formDetailsContent">
 				<form id="form" action="#" method="get" onsubmit="submitForm(); return false;">
 					<ul class="wrapper">
 						<li class="form-row">
 							<label for="itemDescription">Item Description</label>
-							<input type="text" name="itemDescription" id="iDesc" value="An elegant red bowl used for decorative purposes" size="40" readonly>
+							<input type="text" name="itemDescription" id="iDesc" value="Placeholder data only" size="40" readonly>
 						</li>
 						<li class="form-row">
 							<label for="quantity">Quantity:</label>
@@ -42,7 +42,7 @@
 						</li>
 						<li class="form-row">
 							<label for="price">Price:</label>
-							<input type="text" name="price" id="price" value="135" size="3" maxlength="5">
+							<input type="text" name="price" id="price" value="" size="3" maxlength="5" readonly>
 						</li>
 						<li class="form-row">
 							<label for="totalPrice">Total Price</label>
