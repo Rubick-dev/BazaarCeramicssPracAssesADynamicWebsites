@@ -1,8 +1,17 @@
 /* Function that executes on page load - it uses template literals rather than 
 traditional quotations to concatenate the table and image strings required */
+
+function getQueryData(){
+  let queryStringData=location.search;
+  let 
+
+
+}
+
+
 function InsertImageSlices() {
   let dispImg = "";
-  let dirName = "../../images/slicedimages/"
+  let dirName = "../../images/slicedimages/bcpot002/"
   let fileName= "bcpot002_r"
   let row, col;
   
