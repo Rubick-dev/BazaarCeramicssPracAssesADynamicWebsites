@@ -1,1 +1,3 @@
-<?php header( 'location: html/members/members.html'); ?>
+<?php 
+include_once( 'members.html'); 
+?>
